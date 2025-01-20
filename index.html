@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajedrez</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="board-wrapper">
+            <div>
+                <h1 class="title">Visualizador de <br>partidas de ajedrez</h1>
+            </div>
+            <div class="board-data">
+                <div id="board">
+                    <!--Aqui va el tablero!-->
+                </div>
+                <div>
+                    <form method="post" enctype="multipart/form-data">
+                        <div>
+                          <label for="file" class="send-label">Envia tu fichero PGN para analizar la partida</label>
+                          <label for="file-upload" class="custom-file-upload">Enviar!</label>
+                            <input id="file-upload" type="file"/>
+                        </div>
+                      </form>
+                </div>
+            </div>
+            <p class="notation">Un proyecto hecho por: David Gutierrez e Isaac García </p>
+        </div>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>

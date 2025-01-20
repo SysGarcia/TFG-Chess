@@ -1,0 +1,138 @@
+:root {
+    --light-square: #ddbb3f;
+    --dark-square-starting-gradient: #867124;
+    --dark-square-middle-gradient: #87701e;
+    --dark-square-ending-gradient: #a7903d;
+  }
+
+@font-face {
+    font-family: 'FRAHV';
+    src: URL('/Fonts/FRAHV.TTF') format('truetype');
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100svh;
+    width: 100%;
+    font-family: "FRAHV";
+    background: rgb(71,71,71);
+    background: radial-gradient(circle, rgba(71,71,71,1) 6%, rgba(8,3,22,1) 100%);
+}
+ 
+main{
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 1.6rem;
+}
+
+.title{
+    text-shadow: -3px 5px #262626, -5px 9px #050505 ;
+    font-size: 5rem;
+    font-family: "FRAHV";
+    text-align: center;
+    color: #f1f1f1;
+}
+
+.board-wrapper{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+#board{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.light-square, .dark-square{
+    height: 40px;
+    width: 40px;
+}
+
+@media only screen and (min-width: 700px) {
+    .light-square, .dark-square{
+        height: 70px;
+        width: 70px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .title{
+        font-size: 2rem;
+    }
+    main{
+        justify-content: start;
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .notation{
+        font-size: 1.1rem!important;
+        margin: 0 10px 0 10px ;
+    }
+}
+
+.light-square{
+    background: linear-gradient(135deg,var(--dark-square-starting-gradient),var(--dark-square-middle-gradient) 44%,var(--dark-square-ending-gradient));
+}
+
+.dark-square{
+    background-color: var(--light-square);
+}
+
+.notation{
+    padding: 4px;
+    border: 2px solid rgba(0, 0, 0, 0.064);
+    background-color: rgba(0, 0, 0, 0.415);
+    text-shadow: -2px 1px #050505 ;
+    font-size: 1.3rem;
+    text-align: center;
+    color: #f1f1f1;
+}
+
+.piece {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.board-data{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.send-label{
+    text-shadow: -3px 3px #050505 ;
+    font-size: 1.3rem;
+    text-align: center;
+    color: #f1f1f1;
+}
+
+input[type="file"] {
+    display: none;
+  }
+  
+.custom-file-upload{
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: red;
+}
