@@ -16,14 +16,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
   </head>
   <body onkeydown = "ManejarMovimientoFlechas(event)">
-    <div id="MainBoard-wrapper">
+    <div id="Interface-Wrapper">
       <div id="MainBoard"></div>
-      <button id="retroceder-inicio" class="position-buttons"><svg viewBox="0 0 16 16" width="23px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 13L9 10H16V6L9 6L9 3L8 3L3 8L8 13H9Z" fill="#000000"></path> <path d="M2 14L2 2L0 2L5.24537e-07 14H2Z" fill="#000000"></path> </g></svg></button>
-      <button id="retroceder" class="position-buttons"><svg viewBox="0 0 16 16" width="20px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8 10L8 14L6 14L-2.62268e-07 8L6 2L8 2L8 6L16 6L16 10L8 10Z" fill="#000000"></path> </g></svg></button>
+      <div id="Action-Buttons">
+        <button id="retroceder-inicio" class="position-buttons"><svg viewBox="0 0 16 16" width="23px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 13L9 10H16V6L9 6L9 3L8 3L3 8L8 13H9Z" fill="#e1e1e1"></path> <path d="M2 14L2 2L0 2L5.24537e-07 14H2Z" fill="#e1e1e1"></path> </g></svg></button>
+        <button id="retroceder" class="position-buttons"><svg viewBox="0 0 16 16" width="20px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8 10L8 14L6 14L-2.62268e-07 8L6 2L8 2L8 6L16 6L16 10L8 10Z" fill="#e1e1e1"></path> </g></svg></button>
 
-      <button id="avanzar" class="position-buttons"><svg viewBox="0 0 16 16"style="transform: scale(-1,1)" width="20px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8 10L8 14L6 14L-2.62268e-07 8L6 2L8 2L8 6L16 6L16 10L8 10Z" fill="#000000"></path> </g></svg></button>
-      <button id="avanzar-final" class="position-buttons"><svg viewBox="0 0 16 16" style="transform: scale(-1,1)" width="23px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 13L9 10H16V6L9 6L9 3L8 3L3 8L8 13H9Z" fill="#000000"></path> <path d="M2 14L2 2L0 2L5.24537e-07 14H2Z" fill="#000000"></path> </g></svg></button>
-    </div>
+        <button id="avanzar" class="position-buttons"><svg viewBox="0 0 16 16"style="transform: scale(-1,1)" width="20px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8 10L8 14L6 14L-2.62268e-07 8L6 2L8 2L8 6L16 6L16 10L8 10Z" fill="#e1e1e1"></path> </g></svg></button>
+        <button id="avanzar-final" class="position-buttons"><svg viewBox="0 0 16 16" style="transform: scale(-1,1)" width="23px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 13L9 10H16V6L9 6L9 3L8 3L3 8L8 13H9Z" fill="#e1e1e1"></path> <path d="M2 14L2 2L0 2L5.24537e-07 14H2Z" fill="#e1e1e1"></path> </g></svg></button>
+      </div>
+      </div>
     <script>
       // Configuración Inicial tablero
       var MainBoard = Chessboard("MainBoard", {

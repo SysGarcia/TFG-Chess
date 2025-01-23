@@ -44,11 +44,13 @@ main{
     user-select: none;
   }
   .white-1e1d7 {
-    background-color: #972c92;
+    background: rgb(36,44,149);
+    background: linear-gradient(344deg, rgba(36,44,149,1) 6%, rgba(46,56,180,1) 100%); 
     color: #f3f3f3;
   }
   .black-3c85d {
-    background-color: #fad739;
+    background: rgb(234,233,210);
+    background: linear-gradient(344deg, rgba(234,233,210,1) 6%, rgba(227,226,207,1) 100%); 
     color: #0c0c0c;
   }
   .highlight1-32417,
@@ -58,7 +60,8 @@ main{
   .notation-322f9 {
     cursor: default;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: bolder;
     position: absolute;
   }
   .alpha-d2270 {
@@ -70,9 +73,9 @@ main{
     left: 2px;
   }
 
-#MainBoard-wrapper{
+#Interface-Wrapper{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -82,17 +85,27 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px;
-    width: 500px;
+    max-width: 800px;
+    width: 100%;
 }
 
+.position-buttons{  
+    width: 50px;
+    height: 50px;
+    background: #00000000;
+    border-color: #00000000;
+  }
 
-.position-buttons{
-    width: 100px;
-    height: 30px;
+#Action-Buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  background-color: #0c0c0c;
+  max-width: 800px;
+  width: 100%;
 }
 
-.highlight-capture {
-    background-color: rgba(255, 0, 0, 0.5); /* Color rojo semitransparente */
-    border-radius: 50%; /* Hacerlo redondo para destacar */
+.position-buttons path{
+  fill: rgb(233, 233, 233);
 }
