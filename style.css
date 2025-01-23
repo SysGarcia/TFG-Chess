@@ -44,8 +44,8 @@ main{
     user-select: none;
   }
   .white-1e1d7 {
-    background: rgb(36,44,149);
-    background: linear-gradient(344deg, rgba(36,44,149,1) 6%, rgba(46,56,180,1) 100%); 
+    background: #242c95;
+    background: linear-gradient(344deg, rgb(46, 81, 187) 6%, rgb(38, 84, 169) 100%); 
     color: #f3f3f3;
   }
   .black-3c85d {
