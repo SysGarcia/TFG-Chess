@@ -1,122 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Chess</title>
-    <link rel="stylesheet" href="style.css"/>
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.min.js"
-      integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"
-      integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
-  </head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chess</title>
+        <script
+            src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+            crossorigin="anonymous">
+        </script>
+        <link 
+            rel="stylesheet" href="style.css"
+        />
+    </head>
   <body onkeydown = "ManejarMovimientoFlechas(event)">
     <div id="Interface-Wrapper">
-      <div id="MainBoard"></div>
-      <div id="Action-Buttons">
-        <button id="retroceder-inicio" class="position-buttons"><svg viewBox="0 0 16 16" width="23px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 13L9 10H16V6L9 6L9 3L8 3L3 8L8 13H9Z" fill="#e1e1e1"></path> <path d="M2 14L2 2L0 2L5.24537e-07 14H2Z" fill="#e1e1e1"></path> </g></svg></button>
-        <button id="retroceder" class="position-buttons"><svg viewBox="0 0 16 16" width="20px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8 10L8 14L6 14L-2.62268e-07 8L6 2L8 2L8 6L16 6L16 10L8 10Z" fill="#e1e1e1"></path> </g></svg></button>
-
-        <button id="avanzar" class="position-buttons"><svg viewBox="0 0 16 16"style="transform: scale(-1,1)" width="20px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8 10L8 14L6 14L-2.62268e-07 8L6 2L8 2L8 6L16 6L16 10L8 10Z" fill="#e1e1e1"></path> </g></svg></button>
-        <button id="avanzar-final" class="position-buttons"><svg viewBox="0 0 16 16" style="transform: scale(-1,1)" width="23px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 13L9 10H16V6L9 6L9 3L8 3L3 8L8 13H9Z" fill="#e1e1e1"></path> <path d="M2 14L2 2L0 2L5.24537e-07 14H2Z" fill="#e1e1e1"></path> </g></svg></button>
+      <div id="MainBoard-Wrapper">
+        <div id="MainBoard"></div>
+        <div id="Action-Buttons">
+          <button id="retroceder-inicio" class="position-buttons"><svg viewBox="0 0 16 16" width="23px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 13L9 10H16V6L9 6L9 3L8 3L3 8L8 13H9Z" fill="#e1e1e1"></path> <path d="M2 14L2 2L0 2L5.24537e-07 14H2Z" fill="#e1e1e1"></path> </g></svg></button>
+          <button id="retroceder" class="position-buttons"><svg viewBox="0 0 16 16" width="20px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8 10L8 14L6 14L-2.62268e-07 8L6 2L8 2L8 6L16 6L16 10L8 10Z" fill="#e1e1e1"></path> </g></svg></button>
+  
+          <button id="avanzar" class="position-buttons"><svg viewBox="0 0 16 16"style="transform: scale(-1,1)" width="20px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8 10L8 14L6 14L-2.62268e-07 8L6 2L8 2L8 6L16 6L16 10L8 10Z" fill="#e1e1e1"></path> </g></svg></button>
+          <button id="avanzar-final" class="position-buttons"><svg viewBox="0 0 16 16" style="transform: scale(-1,1)" width="23px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 13L9 10H16V6L9 6L9 3L8 3L3 8L8 13H9Z" fill="#e1e1e1"></path> <path d="M2 14L2 2L0 2L5.24537e-07 14H2Z" fill="#e1e1e1"></path> </g></svg></button>
+        </div>
       </div>
+      <div id="Annotations-Wrapper">
+      <div id="Interface-Movements">
+        <!-- Aquí van los movimientos que se van realizando.-->
       </div>
-    <script>
-      // Configuración Inicial tablero
-      var MainBoard = Chessboard("MainBoard", {
-        position: "start",
-        moveSpeed: 150, // Duración de la animación de movimiento de piezas en milisegundos
-      });
-    
-      let chess = new Chess();
-      const chess1 = new Chess();
-    
-      let pgn = [
-        '[Event "Casual Game"]',
-        '[Site "Berlin GER"]',
-        '[Date "1852.??.??"]',
-        '[EventDate "?"]',
-        '[Round "?"]',
-        '[Result "1-0"]',
-        '[White "Adolf Anderssen"]',
-        '[Black "Jean Dufresne"]',
-        '[ECO "C52"]',
-        '[WhiteElo "?"]',
-        '[BlackElo "?"]',
-        '[PlyCount "47"]',
-        "",
-        "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.b4 Bxb4 5.c3 Ba5 6.d4 exd4 7.O-O",
-        "d3 8.Qb3 Qf6 9.e5 Qg6 10.Re1 Nge7 11.Ba3 b5 12.Qxb5 Rb8 13.Qa4",
-        "Bb6 14.Nbd2 Bb7 15.Ne4 Qf5 16.Bxd3 Qh5 17.Nf6+ gxf6 18.exf6",
-        "Rg8 19.Rad1 Qxf3 20.Rxe7+ Nxe7 21.Qxd7+ Kxd7 22.Bf5+ Ke8",
-        "23.Bd7+ Kf8 24.Bxe7# 1-0",
-      ];
-    
-      chess.load_pgn(pgn.join("\n"));
-      moves = chess.history();
-      current_move = 0;
-    
-      console.log(moves);
-    
-      function RetrocederAInicio(){
-        for(let i = 0; i<current_move; i++){
-          chess1.undo();
-        } 
-        current_move = 0;
-
-        MainBoard.position("start", true); 
-      }
-
-      function RetrocederAPosicion(){
-        if (current_move > 0) {
-          current_move = current_move - 1;
-          chess1.undo();
-        }
-        MainBoard.position(chess1.fen(), true); 
-      }
-
-      function AvanzarAPosicion(){
-        new_destination = moves[current_move];
-        if (current_move<moves.length){
-          current_move = current_move + 1;
-          chess1.move(new_destination);
-          MainBoard.position(chess1.fen(), true); // "true" activa la animación
-        }
-      }
-
-      function AvanzarAFinal(){
-        MainBoard.position(chess.fen(), true); // "true" activa la animación
-        for(let i = current_move; i<moves.length; i++){
-          chess1.move(moves[i]);
-        } 
-        current_move = moves.length;
-      }
-
-      $("#retroceder-inicio").on("click", RetrocederAInicio) 
-      $("#retroceder").on("click", RetrocederAPosicion)
-      $("#avanzar").on("click", AvanzarAPosicion)
-      $("#avanzar-final").on("click",AvanzarAFinal)
-
-      function ManejarMovimientoFlechas(par){
-        if (par.keyCode === 39)
-          { AvanzarAPosicion()
-        }
-        else if (par.keyCode === 37)
-          { RetrocederAPosicion()
-        }
-        else if (par.keyCode === 38)
-          { AvanzarAFinal()
-        }
-        else if (par.keyCode === 40)
-          { RetrocederAInicio()
-        }
-      }
-
-    </script>
+    </div>
+    </div>
+  
+      <script type="module" src="main.js"></script> 
   </body>
 </html>
